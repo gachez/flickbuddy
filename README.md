@@ -3,6 +3,12 @@
 FlickBuddy is a Next.js movie and series discovery app. It combines TMDB data
 with AI-assisted ranking, taste profiles, lists, and shareable movie pages.
 
+![FlickBuddy app screenshot](public/docs/flickbuddy-home.png)
+
+## Demo Video
+
+[![Watch the FlickBuddy demo on YouTube](https://img.youtube.com/vi/Mr4gXjDQgKY/maxresdefault.jpg)](https://www.youtube.com/shorts/Mr4gXjDQgKY)
+
 ## Features
 
 - AI-assisted discovery and ranking
