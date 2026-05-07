@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { betaLimitHeaders, consumeBetaLimit } from "@/lib/beta-limits";
 import { ensureBackendReady } from "@/lib/auth-migrations";
-import { generateChatCompletionWithModel } from "@/lib/ai";
+import { generateChatCompletionWithModel, getDefaultAIModel } from "@/lib/ai";
 import {
   discoverMoviesByGenres,
   discoverTVByGenres,
@@ -73,7 +73,7 @@ interface EnrichedCandidate {
   reviews: TMDBMovieReview[];
 }
 
-const MODEL = "gpt-4.1";
+const MODEL = getDefaultAIModel();
 const MAX_QUERY_LENGTH = 600;
 const MAX_REFERENCE_TITLES = 6;
 const MAX_SEARCH_TERMS = 8;

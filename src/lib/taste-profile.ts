@@ -1,11 +1,11 @@
 import "server-only";
 
-import { generateChatCompletionWithModel } from "@/lib/ai";
+import { generateChatCompletionWithModel, getDefaultAIModel } from "@/lib/ai";
 import { db, ensureAppTables } from "@/lib/db";
 import { getUserMoviesByAction } from "@/lib/user-movies";
 import { Movie } from "@/types/movie";
 
-const MODEL = "gpt-4.1";
+const MODEL = getDefaultAIModel();
 const PROFILE_TTL_MS = 1000 * 60 * 60 * 6;
 
 export interface AITasteProfile {

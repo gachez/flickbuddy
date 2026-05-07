@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getRequestSession } from "@/lib/api-session";
 import { betaLimitHeaders, consumeBetaLimit } from "@/lib/beta-limits";
-import { generateChatCompletionWithModel } from "@/lib/ai";
+import { generateChatCompletionWithModel, getDefaultAIModel } from "@/lib/ai";
 import { searchMultiple, TMDBMovie } from "@/lib/tmdb";
 import { getPostHogClient } from "@/lib/posthog-server";
 
-const MODEL = "gpt-4.1";
+const MODEL = getDefaultAIModel();
 
 // --- PROMPT BUILDERS ---
 
