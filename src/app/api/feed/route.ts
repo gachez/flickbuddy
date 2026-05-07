@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { ensureBackendReady } from "@/lib/auth-migrations";
 import { consumeBetaLimit } from "@/lib/beta-limits";
-import { generateChatCompletionWithModel } from "@/lib/ai";
+import { generateChatCompletionWithModel, getDefaultAIModel } from "@/lib/ai";
 import {
   discoverMoviesByGenres,
   discoverMovies,
@@ -68,7 +68,7 @@ const CONTENT_MATCH_THRESHOLD = 62;
 const MIN_ACCEPTABLE_CONTENT_MATCH = 52;
 const MIN_PERSONALIZED_FEED_SIZE = 12;
 const MAX_CONTENT_CANDIDATES = 420;
-const MODEL = "gpt-4.1";
+const MODEL = getDefaultAIModel();
 
 interface TasteMovieSnapshot {
   id: number;
